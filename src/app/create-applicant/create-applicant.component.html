@@ -9,193 +9,151 @@
             </div>
           </div>
           <div class="box box-primary">
-            <form>
+            <form novalidate>
               <h3> I-A. Personal Information </h3>
               <br>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Last Name *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="lastname" id="lastname"> 
-                    </div>
+                  <input class="form-control" type="text" name="lastname" id="lastname" validate minlength="3" maxlength="30"> 
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> First Name * </label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="middlename" id="middlename">
-                    </div>
+                  <input class="form-control" type="text" name="firstname" id="firstname" validate>
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Middle  Name </label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="middlename" id="middlename">
-                    </div>
+                  <input class="form-control" type="text" name="middlename" id="middlename">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name Extension </label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="nameextension" id="nameextension">
-                    </div>
+                  <input class="form-control" type="text" name="nameextension" id="nameextension">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Gender *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Select Gender
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Male</a>
-                      <a class="dropdown-item" href="#">Female</a>
-                    </div>
-                    </div>
+                  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Gender
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Male</a>
+                    <a class="dropdown-item" href="#">Female</a>
+                  </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Birthday *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="date" name="birthday" id="birthday">
-                    </div>
+                  <input class="form-control" type="date" name="birthday" id="birthday">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Birth Place *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="birthplace" id="birthplace">
-                    </div>
+                  <input class="form-control" type="text" name="birthplace" id="birthplace">
                 </div>
               </div>
               <h3>I-B. Contact Information</h3>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Email Address </label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="emailaddress" id="emailaddress">
-                    </div>
+                  <input class="form-control" type="text" name="emailaddress" id="emailaddress">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Cellphone Number </label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="cellphone" id="cellphone">
-                    </div>
+                  <input class="form-control" type="text" name="cellphone" id="cellphone">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Residential Address *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="residentialAddress" id="residentialAddress">
-                    </div>
+                  <input class="form-control" type="text" name="residentialAddress" id="residentialAddress">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Permanent Address *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="permanentAddress" id="permanentAddress">
-                    </div>
+                  <input class="form-control" type="text" name="permanentAddress" id="permanentAddress">
                 </div>
               </div>
               <h3>II. Educational Background</h3>
               <br>
               <h4> Elementary </h4>
               <br>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="eNameOfSchool" id="eNameOfSchool">
-                    </div>
+                  <input class="form-control" type="text" name="eNameOfSchool" id="eNameOfSchool">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="eYearGraduated" id="eYearGraduated">
-                    </div>
+                  <input class="form-control" type="text" name="eYearGraduated" id="eYearGraduated">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="eHonor" id="eHonor">
-                    </div>
+                  <input class="form-control" type="text" name="eHonor" id="eHonor">
                 </div>
               </div>
                <br>
               <h4> Secondary </h4>
               <br>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="sNameOfSchool" id="sNameOfSchool">
-                    </div>
+                  <input class="form-control" type="text" name="sNameOfSchool" id="sNameOfSchool">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="sYearGraduated" id="sYearGraduated">
-                    </div>
+                  <input class="form-control" type="text" name="sYearGraduated" id="sYearGraduated">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="sHonor" id="sHonor">
-                    </div>
+                  <input class="form-control" type="text" name="sHonor" id="sHonor">
                 </div>
               </div>
               <h4> College </h4>
               <br>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="cNameOfSchool" id="cNameOfSchool">
-                    </div>
+                  <input class="form-control" type="text" name="cNameOfSchool" id="cNameOfSchool">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="cYearGraduated" id="cYearGraduated">
-                    </div>
+                  <input class="form-control" type="text" name="cYearGraduated" id="cYearGraduated">
                 </div>
               </div>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="cHonor" id="cHonor">
-                    </div>
+                  <input class="form-control" type="text" name="cHonor" id="cHonor">
                 </div>
               </div>
               <h3> III. Other Information </h3>
               <br>
-              <div class="row">
+              <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Special Kills/Hobbies </label>
                 <div class="col-sm-5">
-                    <div class="form-group">
-                      <input class="form-control" type="text" name="lastname" id="lastname">
-                    </div>
+                  <input class="form-control" type="text" name="lastname" id="lastname">
                 </div>
               </div>
               <hr>
@@ -212,4 +170,3 @@
       </div>
   </section>
 </div>
- 

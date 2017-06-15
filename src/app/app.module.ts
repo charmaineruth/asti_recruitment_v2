@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { CreateApplicantComponent } from './create-applicant/create-applicant.component';
 import { ListOfApplicantComponent } from './list-of-applicant/list-of-applicant.component';
+import { ValidatorDirective } from './validator.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListOfApplicantComponent } from './list-of-applicant/list-of-applicant.
     DashboardComponent,
     SideBarComponent,
     CreateApplicantComponent,
-    ListOfApplicantComponent
+    ListOfApplicantComponent,
+    ValidatorDirective
   ],
   imports: [
     BrowserModule,
