@@ -1,0 +1,9 @@
+.box {
+    width:100%;
+    background-color: #fafafa;
+    padding:30px;
+}
+.box-primary {
+    border-top:solid #0E1D2B 2px;
+    border-radius:5px 5px 5px 5px;
+}
