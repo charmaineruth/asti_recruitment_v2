@@ -9,163 +9,275 @@
             </div>
           </div>
           <div class="box box-primary">
-            <form novalidate>
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
               <h3> I-A. Personal Information </h3>
               <br>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Last Name *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="lastname" id="lastname" validate minlength="3" maxlength="30"> 
+              <!-- Start of Form Group Name -->
+              <div formGroupName="name">
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Last Name *</label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" formControlName="lastname"> 
+                  </div>
+                  <div class="col-sm-3">
+                      <div *ngIf="userForm.controls['name'].controls['lastname'].hasError('required')" class="error-message">
+                        Please enter a lastname
+                      </div>
+                      <div *ngIf="userForm.controls['name'].controls['lastname'].hasError('minlength')" class="error-message">
+                        Please enter aleast 4 characters.
+                      </div>
+                      <div *ngIf="userForm.controls['name'].controls['lastname'].hasError('maxlength')" class="error-message">
+                        Lastname must not exceed 25 characters.
+                      </div>
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> First Name * </label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" formControlName="firstname">
+                  </div>
+                  <div class="col-sm-3">
+                      <div *ngIf="userForm.controls['name'].controls['firstname'].hasError('required')" class="error-message">
+                        Please enter a firstname 
+                      </div>
+                      <div *ngIf="userForm.controls['name'].controls['firstname'].hasError('minlength')" class="error-message">
+                        Please enter aleast 4 characters.
+                      </div>
+                      <div *ngIf="userForm.controls['name'].controls['firstname'].hasError('maxlength')" class="error-message">
+                        Firstname must not exceed 25 characters.
+                      </div>
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Middle  Name </label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" formControlName="middlename">
+                  </div>
+                  <div class="col-sm-3">
+                      <div *ngIf="userForm.controls['name'].controls['middlename'].hasError('required')" class="error-message">
+                        Please enter a middlename 
+                      </div>
+                      <div *ngIf="userForm.controls['name'].controls['middlename'].hasError('minlength')" class="error-message">
+                        Please enter aleast 4 characters.
+                      </div>
+                      <div *ngIf="userForm.controls['name'].controls['middlename'].hasError('maxlength')" class="error-message">
+                        Middlename must not exceed 25 characters.
+                      </div>
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name Extension </label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" formControlName="nameextension">
+                  </div>
+                  <div class="col-sm-3">
+                      <div *ngIf="userForm.controls['name'].controls['nameextension'].hasError('maxlength')" class="error-message">
+                        Name extension must not exceed 2 characters.
+                      </div>
+                  </div>
                 </div>
               </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> First Name * </label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="firstname" id="firstname" validate>
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Middle  Name </label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="middlename" id="middlename">
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name Extension </label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="nameextension" id="nameextension">
-                </div>
-              </div>
-              <div class="row form-group">
+              <!-- End of Form Group Name -->
+
+              <!--<div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Gender *</label>
                 <div class="col-sm-5">
-                  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Select Gender
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Male</a>
-                    <a class="dropdown-item" href="#">Female</a>
-                  </div>
+                   <input class="form-control" type="text" formControlName="gender">
                 </div>
               </div>
               <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Birthday *</label>
                 <div class="col-sm-5">
-                  <input class="form-control" type="date" name="birthday" id="birthday">
+                  <input class="form-control" type="date" formControlName="birthday">
                 </div>
               </div>
               <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Birth Place *</label>
                 <div class="col-sm-5">
-                  <input class="form-control" type="text" name="birthplace" id="birthplace">
+                  <input class="form-control" type="text" formControlName="birthplace">
+                </div>
+              </div>-->
+              <!-- Start of Contact Information Form Group -->
+              <div formGroupName="contactInformation">
+                <h3>I-B. Contact Information</h3>
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Email Address </label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="email" formControlName="emailaddress">
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Cellphone Number </label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" formControlName="cellphone">
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Residential Address *</label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" formControlName="residentialAddress">
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Permanent Address *</label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" formControlName="permanentAddress">
+                  </div>
                 </div>
               </div>
-              <h3>I-B. Contact Information</h3>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Email Address </label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="emailaddress" id="emailaddress">
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Cellphone Number </label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="cellphone" id="cellphone">
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Residential Address *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="residentialAddress" id="residentialAddress">
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Permanent Address *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="permanentAddress" id="permanentAddress">
-                </div>
-              </div>
+              <!-- End of Contact Information Form Group -->
+
+              <!-- Start of Educational Background -->
               <h3>II. Educational Background</h3>
               <br>
               <h4> Elementary </h4>
               <br>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="eNameOfSchool" id="eNameOfSchool">
+              <!-- Start of Elementary Education Form Group -->
+                <div formGroupName="elementaryEducation">
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="eNameOfSchool">
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="eYearGraduated">
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="eHonor">
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="eYearGraduated" id="eYearGraduated">
+                <!-- End of Elementary Education Form Group -->
+                <br>
+                <h4> Secondary </h4>
+                <br>
+                <!-- Start of Secondary Education Form Group -->
+                <div formGroupName="secondaryEducation">
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="sNameOfSchool">
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="sYearGraduated">
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="sHonor">
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="eHonor" id="eHonor">
+                <!-- End of Secondary Education Form Group -->
+
+                <!-- Start of College Education Form Group -->
+                <h4> College </h4>
+                <br>
+                <div formGroupName="collegeEducation">
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="cNameOfSchool">
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="cYearGraduated">
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="cHonor">
+                    </div>
+                  </div>
                 </div>
-              </div>
-               <br>
-              <h4> Secondary </h4>
-              <br>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="sNameOfSchool" id="sNameOfSchool">
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="sYearGraduated" id="sYearGraduated">
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="sHonor" id="sHonor">
-                </div>
-              </div>
-              <h4> College </h4>
-              <br>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name of School *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="cNameOfSchool" id="cNameOfSchool">
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="cYearGraduated" id="cYearGraduated">
-                </div>
-              </div>
-              <div class="row form-group">
-                <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
-                <div class="col-sm-5">
-                  <input class="form-control" type="text" name="cHonor" id="cHonor">
-                </div>
-              </div>
+                <!-- End of College Education Form Group -->
+
+              <!-- End of Educational Background Form Group -->
+              
+              <!-- Start of Other Information -->
               <h3> III. Other Information </h3>
               <br>
               <div class="row form-group">
                 <label class="col-sm-2 col-sm-offset-2 col-form-label"> Special Kills/Hobbies </label>
                 <div class="col-sm-5">
-                  <input class="form-control" type="text" name="lastname" id="lastname">
+                  <input class="form-control" type="text" formControlName="hobbies">
                 </div>
               </div>
               <hr>
+              <!-- End of Other Information -->
+
               <div class="row">
                 <div class="col-sm-2 col-sm-offset-5">
-                     <input class="form-control btn-primary" type="button" name="save" id="lastname" value="Save">
-                </div>
-                <div class="col-sm-2">
-                     <input class="form-control btn-default" type="button" name="save" id="lastname" value="Cancel">
+                     <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary"> Submit </button>
+                     <button class="btn btn-default" type="button"> Cancel </button>
                 </div>
               </div>
             </form>
+            <!--<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name *</label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" #refName formControlName="name"> 
+                    <b> {{refName.className}} </b>
+                  </div>
+                  <div class="col-sm-3">
+                    <div *ngIf="userForm.controls['name'].hasError('required')" class="error-message">
+                       Please enter a name 
+                    </div>
+                    <div *ngIf="userForm.controls['name'].hasError('minlength')" class="error-message">
+                      Please enter aleast 4 characters.
+                    </div>
+                    <div *ngIf="userForm.controls['name'].hasError('maxlength')" class="error-message">
+                      Name must not exceed 25 characters.
+                    </div>
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <label class="col-sm-2 col-sm-offset-2 col-form-label"> Email *</label>
+                  <div class="col-sm-5">
+                    <input class="form-control" type="text" formControlName="email"> 
+                  </div>
+                </div>
+                <div formGroupName="address">
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Street *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="street"> 
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> City *</label>
+                    <div class="col-sm-5">
+                       <input class="form-control" type="text" formControlName="city">  
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Postal Code *</label>
+                    <div class="col-sm-5">
+                      <input class="form-control" type="text" formControlName="postalcode"> 
+                    </div>
+                    <div class="col-sm-3">
+                      <div *ngIf="userForm.controls['address'].controls['postalcode'].hasError('pattern')" class="error-message">
+                        Postal Code format is five digits
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary"> Submit </button>
+            </form>-->
           </div>
       </div>
   </section>

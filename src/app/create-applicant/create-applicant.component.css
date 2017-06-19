@@ -7,3 +7,13 @@
     border-top:solid #0E1D2B 2px;
     border-radius:5px 5px 5px 5px;
 }
+input.ng-invalid {
+    border: 1px solid red;
+    
+}
+input.ng-valid {
+    border: 1px solid green;
+}
+.error-message {
+    color:red;
+}
