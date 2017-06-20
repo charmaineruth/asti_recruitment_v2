@@ -29,6 +29,9 @@
                       <div *ngIf="userForm.controls['name'].controls['lastname'].hasError('maxlength')" class="error-message">
                         Lastname must not exceed 25 characters.
                       </div>
+                      <div *ngIf="userForm.controls['name'].controls['lastname'].hasError('pattern')" class="error-message">
+                        Invalid format.
+                      </div>
                   </div>
                 </div>
                 <div class="row form-group">
@@ -46,6 +49,9 @@
                       <div *ngIf="userForm.controls['name'].controls['firstname'].hasError('maxlength')" class="error-message">
                         Firstname must not exceed 25 characters.
                       </div>
+                      <div *ngIf="userForm.controls['name'].controls['firstname'].hasError('pattern')" class="error-message">
+                        Invalid format.
+                      </div>
                   </div>
                 </div>
                 <div class="row form-group">
@@ -54,14 +60,14 @@
                     <input class="form-control" type="text" formControlName="middlename">
                   </div>
                   <div class="col-sm-3">
-                      <div *ngIf="userForm.controls['name'].controls['middlename'].hasError('required')" class="error-message">
-                        Please enter a middlename 
-                      </div>
                       <div *ngIf="userForm.controls['name'].controls['middlename'].hasError('minlength')" class="error-message">
                         Please enter aleast 4 characters.
                       </div>
                       <div *ngIf="userForm.controls['name'].controls['middlename'].hasError('maxlength')" class="error-message">
                         Middlename must not exceed 25 characters.
+                      </div>
+                      <div *ngIf="userForm.controls['name'].controls['middlename'].hasError('pattern')" class="error-message">
+                        Invalid format.
                       </div>
                   </div>
                 </div>
@@ -105,23 +111,56 @@
                   <div class="col-sm-5">
                     <input class="form-control" type="email" formControlName="emailaddress">
                   </div>
+                    <div *ngIf="userForm.controls['contactInformation'].controls['emailaddress'].hasError('required')" class="error-message">
+                      Please enter a Email Address
+                    </div>
+                    <div *ngIf="userForm.controls['contactInformation'].controls['emailaddress'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                    </div>
                 </div>
                 <div class="row form-group">
                   <label class="col-sm-2 col-sm-offset-2 col-form-label"> Cellphone Number </label>
                   <div class="col-sm-5">
                     <input class="form-control" type="text" formControlName="cellphone">
                   </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['cellphone'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                    </div>
                 </div>
                 <div class="row form-group">
                   <label class="col-sm-2 col-sm-offset-2 col-form-label"> Residential Address *</label>
                   <div class="col-sm-5">
                     <input class="form-control" type="text" formControlName="residentialAddress">
                   </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['residentialAddress'].hasError('required')" class="error-message">
+                      Please enter a Residential Address
+                  </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['residentialAddress'].hasError('minlength')" class="error-message">
+                      Please enter aleast 4 characters.
+                  </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['residentialAddress'].hasError('maxlength')" class="error-message">
+                      Middlename must not exceed 100 characters.
+                  </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['residentialAddress'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                  </div>
                 </div>
                 <div class="row form-group">
                   <label class="col-sm-2 col-sm-offset-2 col-form-label"> Permanent Address *</label>
                   <div class="col-sm-5">
                     <input class="form-control" type="text" formControlName="permanentAddress">
+                  </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['permanentAddress'].hasError('required')" class="error-message">
+                      Please enter a Permanent Address
+                  </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['permanentAddress'].hasError('minlength')" class="error-message">
+                      Please enter aleast 4 characters.
+                  </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['permanentAddress'].hasError('maxlength')" class="error-message">
+                      Middlename must not exceed 100 characters.
+                  </div>
+                  <div *ngIf="userForm.controls['contactInformation'].controls['permanentAddress'].hasError('pattern')" class="error-message">
+                    Invalid format.
                   </div>
                 </div>
               </div>
@@ -139,15 +178,33 @@
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="eNameOfSchool">
                     </div>
+                    <div *ngIf="userForm.controls['elementaryEducation'].controls['eNameOfSchool'].hasError('required')" class="error-message">
+                        Please enter a Name of School
+                    </div>
+                    <div *ngIf="userForm.controls['elementaryEducation'].controls['eNameOfSchool'].hasError('minlength')" class="error-message">
+                      Please enter aleast 4 characters.
+                    </div>
+                    <div *ngIf="userForm.controls['elementaryEducation'].controls['eNameOfSchool'].hasError('maxlength')" class="error-message">
+                        Middlename must not exceed 50 characters.
+                    </div>
+                    <div *ngIf="userForm.controls['elementaryEducation'].controls['eNameOfSchool'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                    </div>
                   </div>
                   <div class="row form-group">
                     <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="eYearGraduated">
                     </div>
+                    <div *ngIf="userForm.controls['elementaryEducation'].controls['eYearGraduated'].hasError('required')" class="error-message">
+                        Please enter a Name of School
+                    </div>
+                    <div *ngIf="userForm.controls['elementaryEducation'].controls['eYearGraduated'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                    </div>
                   </div>
                   <div class="row form-group">
-                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received </label>
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="eHonor">
                     </div>
@@ -164,15 +221,33 @@
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="sNameOfSchool">
                     </div>
+                    <div *ngIf="userForm.controls['secondaryEducation'].controls['sNameOfSchool'].hasError('required')" class="error-message">
+                        Please enter a Name of School
+                    </div>
+                    <div *ngIf="userForm.controls['secondaryEducation'].controls['sNameOfSchool'].hasError('minlength')" class="error-message">
+                      Please enter aleast 4 characters.
+                    </div>
+                    <div *ngIf="userForm.controls['secondaryEducation'].controls['sNameOfSchool'].hasError('maxlength')" class="error-message">
+                        Middlename must not exceed 50 characters.
+                    </div>
+                    <div *ngIf="userForm.controls['secondaryEducation'].controls['sNameOfSchool'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                    </div>
                   </div>
                   <div class="row form-group">
                     <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="sYearGraduated">
                     </div>
+                    <div *ngIf="userForm.controls['secondaryEducation'].controls['sYearGraduated'].hasError('required')" class="error-message">
+                        Please enter a Name of School
+                    </div>
+                    <div *ngIf="userForm.controls['secondaryEducation'].controls['sYearGraduated'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                    </div>
                   </div>
                   <div class="row form-group">
-                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received </label>
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="sHonor">
                     </div>
@@ -189,15 +264,33 @@
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="cNameOfSchool">
                     </div>
+                    <div *ngIf="userForm.controls['collegeEducation'].controls['cNameOfSchool'].hasError('required')" class="error-message">
+                        Please enter a Name of School
+                    </div>
+                    <div *ngIf="userForm.controls['collegeEducation'].controls['cNameOfSchool'].hasError('minlength')" class="error-message">
+                      Please enter aleast 4 characters.
+                    </div>
+                    <div *ngIf="userForm.controls['collegeEducation'].controls['cNameOfSchool'].hasError('maxlength')" class="error-message">
+                        Middlename must not exceed 50 characters.
+                    </div>
+                    <div *ngIf="userForm.controls['collegeEducation'].controls['cNameOfSchool'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                    </div>
                   </div>
                   <div class="row form-group">
                     <label class="col-sm-2 col-sm-offset-2 col-form-label"> Year Graduated *</label>
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="cYearGraduated">
                     </div>
+                    <div *ngIf="userForm.controls['collegeEducation'].controls['cYearGraduated'].hasError('required')" class="error-message">
+                        Please enter a Name of School
+                    </div>
+                    <div *ngIf="userForm.controls['collegeEducation'].controls['cYearGraduated'].hasError('pattern')" class="error-message">
+                      Invalid format.
+                    </div>
                   </div>
                   <div class="row form-group">
-                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received *</label>
+                    <label class="col-sm-2 col-sm-offset-2 col-form-label"> Scholarship/ Academic Honors Received </label>
                     <div class="col-sm-5">
                       <input class="form-control" type="text" formControlName="cHonor">
                     </div>
@@ -221,11 +314,31 @@
 
               <div class="row">
                 <div class="col-sm-2 col-sm-offset-5">
-                     <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary"> Submit </button>
+                     <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary"> Add </button>
                      <button class="btn btn-default" type="button"> Cancel </button>
                 </div>
               </div>
             </form>
+            <br>
+            <hr>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <td> Last Name </td>
+                  <td> First Name </td>
+                  <td> Middle Name </td>
+                  <td> Name Extension </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> {{lastname}} </td>
+                  <td> {{firstname}} </td>
+                  <td> {{middlename}} </td>
+                  <td> {{nameextension}} </td>
+                </tr>
+              </tbody>
+            </table>
             <!--<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
                 <div class="row form-group">
                   <label class="col-sm-2 col-sm-offset-2 col-form-label"> Name *</label>
